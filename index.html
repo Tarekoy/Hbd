@@ -14,7 +14,6 @@
             background: linear-gradient(45deg, #1e3c72, #2a5298);
             color: white;
         }
-
         .container {
             width: 100%;
             max-width: 400px;
@@ -24,22 +23,19 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
-
         header {
             background: #ff9800;
             color: white;
             padding: 10px;
             border-radius: 10px 10px 0 0;
         }
-
-        /* Updated Button Styles */
         .earn-btn, .option-btn {
             width: 100%;
-            background: linear-gradient(45deg, #6a11cb, #2575fc); /* Purple Gradient */
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
             color: white;
             padding: 12px;
             border: none;
-            border-radius: 25px; /* Rounded Corners */
+            border-radius: 25px;
             font-size: 18px;
             margin-top: 10px;
             cursor: pointer;
@@ -48,7 +44,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .earn-btn::before, .option-btn::before {
             content: '';
             position: absolute;
@@ -56,19 +51,16 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), transparent); /* Black Flag Effect */
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), transparent);
             transition: 0.5s ease;
         }
-
         .earn-btn:hover::before, .option-btn:hover::before {
             left: 100%;
         }
-
         .earn-btn:hover, .option-btn:hover {
-            background: linear-gradient(45deg, #2575fc, #6a11cb); /* Reverse Gradient on Hover */
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
             transform: scale(1.05);
         }
-
         .bottom-nav {
             display: flex;
             justify-content: space-around;
@@ -76,7 +68,6 @@
             background: rgba(0, 0, 0, 0.2);
             border-top: 2px solid #ddd;
         }
-
         .bottom-nav button {
             background: none;
             border: none;
@@ -86,21 +77,17 @@
             cursor: pointer;
             transition: 0.3s ease;
         }
-
         .bottom-nav button:hover {
             color: #ff9800;
             transform: scale(1.1);
         }
-
         .page {
             display: block;
             padding: 20px;
         }
-
         .hidden {
             display: none;
         }
-
         input, select {
             width: 100%;
             padding: 10px;
@@ -108,7 +95,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         #monetag-ad {
             width: 100%;
             height: 250px;
@@ -119,8 +105,6 @@
             border-radius: 5px;
             color: black;
         }
-
-        /* Profile Picture Styles */
         .profile-picture {
             width: 100px;
             height: 100px;
@@ -129,15 +113,12 @@
             border: 3px solid #ff9800;
             margin-bottom: 15px;
         }
-
         .profile-upload {
             margin-top: 10px;
         }
-
         .profile-upload input {
             display: none;
         }
-
         .profile-upload label {
             background: #ff9800;
             color: white;
@@ -146,7 +127,6 @@
             cursor: pointer;
             transition: 0.3s ease;
         }
-
         .profile-upload label:hover {
             background: #e65100;
         }
@@ -155,51 +135,42 @@
 <body>
     <div class="container">
         <header>
-            <h1>Developer by Md Tarek Islam</h1>
+            <h1>Welcome, <span id="displayName">User</span></h1>
         </header>
-
         <!-- Home Page -->
         <section id="home" class="page">
             <button class="earn-btn" onclick="watchAds('https://www.effectiveratecpm.com/ytpsfbpvub?key=35e3c6b8e515325c2925382fa8400b76')">🎥 Watch Ads 1</button>
-            <button class="earn-btn" onclick="watchAds('https://www.effectiveratecpm.com/xfb38k4gw7?key=e41ce6a1234feba474bdc1b966827544')">🎥 Watch Ads 2</button>
-            <button class="earn-btn" onclick="watchAds('https://www.effectiveratecpm.com/example3')">🎥 Watch Ads 3</button>
-            
+            <button class="earn-btn" onclick="watchAds('https://www.effectiveratecpm.com/ngbrjbbgty?key=bf18e506e1a62ea27f04057ead04f41e')">🎥 Watch Ads 2</button>
+            <p>Watch ads to earn 0.4 BDT. Ads must be watched for 20 seconds to earn.</p>
+            <p>free incom tips Bangla</p>
             <!-- Monetag Ad System -->
             <div id="monetag-ad">
                 <script src='//whephiwums.com/sdk.js' data-zone='8986104' data-sdk='show_8986104'></script>
             </div>
         </section>
-
         <!-- Earn Page -->
         <section id="earn" class="page hidden">
             <h2>Earn</h2>
             <button class="option-btn" onclick="subscribeEarn()">📺 YouTube Channel (Earn 2৳)</button>
-            <button class="option-btn" onclick="window.open('https://t.me/tarekczrf', '_blank')">💬 Telegram Group</button>
+            <button class="option-btn" onclick="window.open('https://t.me/freeincomTipsBangla', '_blank')">💬 Telegram Channel</button>
             <button class="option-btn" onclick="showPage('withdraw')">💳 Withdraw</button>
         </section>
-
         <!-- Withdraw Page -->
         <section id="withdraw" class="page hidden">
             <h2>Withdraw</h2>
             <p>Minimum Withdrawal: <strong>100 BDT</strong></p>
-
             <label>Withdrawal Method</label>
             <select id="withdrawMethod">
                 <option value="Bkash">Bkash</option>
                 <option value="Nagad">Nagad</option>
             </select>
-
             <label>Amount</label>
             <input type="number" id="withdrawAmount" placeholder="Enter amount">
-
             <label>Withdrawal Number</label>
             <input type="text" id="withdrawNumber" placeholder="Enter wallet number">
-
             <button class="earn-btn" onclick="submitWithdraw()">Submit Withdrawal</button>
-
             <p id="withdrawMessage" style="color: red;"></p>
         </section>
-
         <!-- Profile Page -->
         <section id="profile" class="page hidden">
             <h2>Profile</h2>
@@ -212,19 +183,17 @@
                 </div>
             </div>
             <!-- User Info -->
-            <p>Name: <strong id="userName">Tarek</strong></p>
+            <p>Name: <strong id="userName">User</strong></p>
             <p>Total Tasks: <strong id="taskCount">0</strong></p>
             <p>Completed Tasks: <strong id="completedTasks">0</strong></p>
             <p>Balance: <strong id="balance">0৳</strong></p>
             <p>Referral Count: <strong id="referralCount">0</strong></p>
-
             <!-- Referral Link -->
             <p>Your Referral Link:</p>
             <input type="text" id="referralLink" readonly>
             <button class="earn-btn" onclick="copyReferral()">📋 Copy Link</button>
             <button class="option-btn" onclick="shareReferral()">📢 Share</button>
         </section>
-
         <!-- Navigation -->
         <nav class="bottom-nav">
             <button onclick="showPage('home')">🏠 Home</button>
@@ -233,27 +202,31 @@
             <button onclick="showPage('profile')">👤 Profile</button>
         </nav>
     </div>
-
     <script>
         let balance = parseInt(localStorage.getItem("balance")) || 0;
         let completedTasks = parseInt(localStorage.getItem("completedTasks")) || 0;
         let referralCount = parseInt(localStorage.getItem("referralCount")) || 0;
+        let userName = localStorage.getItem("userName") || "User";
+        let profilePicture = localStorage.getItem("profilePicture") || "https://via.placeholder.com/100";
 
         // Update UI on load
         document.getElementById("balance").innerText = balance + "৳";
         document.getElementById("completedTasks").innerText = completedTasks;
         document.getElementById("referralCount").innerText = referralCount;
+        document.getElementById("userName").innerText = userName;
+        document.getElementById("displayName").innerText = userName;
+        document.getElementById("profilePicture").src = profilePicture;
 
         // Watch Ads Function
         function watchAds(url) {
             window.open(url, '_blank');
 
             setTimeout(() => {
-                balance += 2; // 2৳ যোগ হবে
+                balance += 0.4; // 0.4৳ যোগ হবে
                 localStorage.setItem("balance", balance);
                 document.getElementById("balance").innerText = balance + "৳";
-                alert("✅ আপনার ব্যালেন্সে ২৳ যোগ হয়েছে!");
-            }, 15000); // 15 সেকেন্ড
+                alert("✅ আপনার ব্যালেন্সে 0.4৳ যোগ হয়েছে!");
+            }, 20000); // 20 সেকেন্ড
         }
 
         // Show Page Function
@@ -265,7 +238,7 @@
         // Subscribe and Earn Function
         function subscribeEarn() {
             completedTasks += 1;
-            balance += 2;
+            balance += 0.3;
             localStorage.setItem("completedTasks", completedTasks);
             localStorage.setItem("balance", balance);
             document.getElementById("completedTasks").innerText = completedTasks;
@@ -304,6 +277,7 @@
                 const reader = new FileReader();
                 reader.onload = function (e) {
                     document.getElementById("profilePicture").src = e.target.result;
+                    localStorage.setItem("profilePicture", e.target.result);
                 };
                 reader.readAsDataURL(file);
             }
@@ -311,8 +285,7 @@
 
         // Generate Referral Link
         function generateReferralLink() {
-            let userId = Math.floor(Math.random() * 1000000); // Random User ID
-            let referralLink = `https://t.me/TarekBot?start=${userId}`;
+            let referralLink = `https://t.me/Monetagddbot`;
             document.getElementById("referralLink").value = referralLink;
         }
 
@@ -359,4 +332,4 @@
         });
     </script>
 </body>
- </html>
+                </html>
